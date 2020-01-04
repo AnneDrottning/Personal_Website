@@ -17,6 +17,7 @@ body {
   color: white;
   text-align: center;
   text-shadow: -1px 0 #f0ece1, 0 1px #f0ece1, 1px 0 #f0ece1, 0 -1px #f0ece1;
+  z-index: 1000;
 }
 .theName:hover {
   opacity: 0.5;
@@ -24,6 +25,7 @@ body {
 /* Settings for the clouds */
 .cloud1 {
   color: white;
+  position: absolute;
   font-size: 3vw;
   opacity: 0.7;
   -webkit-transform: scale(5, 2);
@@ -34,21 +36,11 @@ body {
 }
 .cloud2 {
   color: white;
+  position: absolute;
   font-size: 1vw;
   opacity: 0.5;
   /* Scale the cloud to be larger */
   -webkit-transform: scale(15,10);
-  /* Make the edges more blurry */
-  background: -webkit-radial-gradient(white, transparent);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.cloud3 {
-  color: white;
-  opacity: 0.5;
-  font-size: 1.2vw;
-  /* Make the cloud wide */
-  transform: scaleX(50);
   /* Make the edges more blurry */
   background: -webkit-radial-gradient(white, transparent);
   -webkit-background-clip: text;
