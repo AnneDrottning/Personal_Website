@@ -33,6 +33,7 @@ body {
   background: -webkit-radial-gradient(white 30%, transparent 70%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  z-index: 1;
 }
 .cloud2 {
   color: white;
@@ -45,4 +46,41 @@ body {
   background: -webkit-radial-gradient(white, transparent);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  z-index: 1;
+}
+
+/* Settings for the menu button */
+.weatherButton {
+  font-size: 2vw;
+  color: white;
+  background: #CCCCCC;
+  padding: 0.4vw;
+  border: 1px solid white;
+  border-radius: 50%;
+  z-index: 900;
+}
+.menu {
+  position: fixed;
+  top: 1vw;
+}
+.weatherContent {
+  display: none;
+  position: absolute;
+  background-color: none;
+  z-index: 50;
+  padding-top: 1vw;
+}
+.weatherContent button {
+  font-size: 1.5vw;
+  color: white;
+  padding: 0.4vw;
+  display: block;
+  border: 1px solid white;
+  background-color: #CCCCCC;
+  border-radius: 50%;
+  text-decoration: none;
+  z-index: 50;
+}
+.menu:hover .weatherContent {
+  display: block;
 }

@@ -20,6 +20,8 @@ class FrontPage extends React.Component {
                 <div className="name">
                     <p className="theName">ANNE DROTTNING</p>
                 </div>
+                {/* Show the menu to choose weather */}
+                <WeatherButton />
                 {/* Show the clouds */}
                 <div>
                     {[...Array(Math.round(Math.random()*(7))+4)].map((x, i) => 
@@ -107,6 +109,35 @@ class Element extends React.Component {
             );
         }
         
+    }
+}
+
+// Create the class for the button where we can change the weather
+class WeatherButton extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+    render() {
+        return (
+            <div className="menu">
+                {/* Create the menu and the corresponding buttons: */}
+                <button className="weatherButton fas fa-cloud-sun-rain">
+                    <div className="weatherContent">
+                        {/* To change to the clouds: */}
+                        <button className="weatherOption fas fa-cloud"></button>
+
+                        {/* To change to rain: */}
+                        <button className="weatherOption fas fa-cloud-showers-heavy"></button>
+
+                        {/* To change to snow: */}
+                        <button className="weatherOption far fa-snowflake"></button>
+                        
+                        {/* To change to nighttime: */}
+                        <button className="weatherOption fas fa-moon"></button>
+                    </div>
+                </button>
+            </div>
+        )
     }
 }
 
