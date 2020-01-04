@@ -1,6 +1,19 @@
+/* Import the google fonts I want to use */
 @import url('https://fonts.googleapis.com/css?family=Bitter:700|Montserrat|Raleway');
 
+/* Settings for the body */
 body {
   width: 100%;
   background-color: #A4D4FF;
+}
+
+/* Settings for my name */
+.name {
+  margin-top: 40vh;
+}
+.theName {
+  font-family: 'Bitter';
+  font-size: 4vw;
+  color: white;
+  text-align: center;
 }
