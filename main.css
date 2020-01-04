@@ -5,6 +5,12 @@
 body {
   width: 100%;
   background-color: #A4D4FF;
+  /* Make sure changes to the body happens with a nice transition */
+  -webkit-transition: all 3s ease-in-out;
+  -moz-transition: all 3s ease-in-out;
+  -o-transition: all 3s ease-in-out;
+  -ms-transition: all 3s ease-in-out;
+  transition: all 3s ease-in-out;
 }
 
 /* Settings for my name */
@@ -83,4 +89,22 @@ body {
 }
 .menu:hover .weatherContent {
   display: block;
+}
+
+/* Settings for the rain */
+.drop1 {
+  display: none;
+  opacity: 0;
+  font-family: 'Raleway';
+  color: #A9C3D0;
+  font-size: 1vw;
+  position: absolute;
+}
+.drop2 {
+  display: none;
+  opacity: 0;
+  font-family: 'Raleway';
+  color: #A3BED6;
+  font-size: 1vw;
+  position: absolute;
 }
