@@ -25,18 +25,18 @@ class FrontPage extends React.Component {
                 {/* Show the elements */}
                 <div>
                     <div>
-                        {[...Array(Math.round(Math.random()*7) + 4)].map((x, i) => 
-                            <Element type="cloud" key={"cloud" + i} 
+                        {[...Array(Math.round(Math.random()*7) + 4)].map((x, i) =>
+                            <Element type="cloud" key={"cloud" + i}
                                 direction={"x"} />)}
                     </div>
                     <div>
                         {[...Array(Math.round(Math.random()*100) + 50)].map((x, i) =>
-                            <Element type={"rain"} key={"rain" + i} direction={"y"} 
+                            <Element type={"rain"} key={"rain" + i} direction={"y"}
                                  />)}
                     </div>
-                    
-                </div> 
-            </div> 
+
+                </div>
+            </div>
         );
     }
 }
@@ -128,11 +128,11 @@ class Element extends React.Component {
                     }
                 })
             })
-            
+
         }
         // Executing the movement
         var allMovement = setInterval(movement, 10);
-        
+
     }
     render() {
         // Want to display the clouds:
@@ -157,7 +157,7 @@ class Element extends React.Component {
                 )
             }
         }
-        
+
     }
 }
 
@@ -243,7 +243,7 @@ class WeatherButton extends React.Component {
                 var fadeIntoView = setInterval(increaseOpacity, 200);
 
             }
-            
+
         }
         if (currWeather != event.target.id) {
             // Want to fade the current weather away
@@ -263,7 +263,7 @@ class WeatherButton extends React.Component {
                     <button className="weatherOption fas fa-cloud"
                         onClick={this.changeWeather}
                         id="cloud"></button>
-                    
+
                     {/* To change to rain: */}
                     <button className="weatherOption fas fa-cloud-showers-heavy"
                         onClick={this.changeWeather}
@@ -271,7 +271,7 @@ class WeatherButton extends React.Component {
 
                     {/* To change to snow: */}
                     <button className="weatherOption far fa-snowflake"></button>
-                    
+
                     {/* To change to nighttime: */}
                     <button className="weatherOption fas fa-moon"></button>
 
