@@ -103,7 +103,8 @@ class Element extends React.Component {
                         var new_position = 0;
                         if (old_value > 150) {
                             // If the element has moved past the screen we set it to start from the other side again
-                            new_position = -10;
+                            new_position = old_value;//-10;
+                            e.style.color = 'black';
                             // We also want to get a new vertical position for them:
                             e.style.top  = Math.round(Math.random()*90) + "vh";
                         } else {
