@@ -108,7 +108,7 @@ class Element extends React.Component {
                         * the opacity to make them invisible and then restart
                         * at the beginning?
                         */
-                        if (old_value == 100 && e.style.opacity == 0) {
+                        if (old_value == 100 && old_opacity <= 0) {
                           // We also want to get a new vertical position for them:
                           e.style.top  = Math.round(Math.random()*90) + "vh";
                           // Start at the beginning again.
