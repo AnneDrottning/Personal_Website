@@ -95,7 +95,7 @@ class Element extends React.Component {
                 Array.prototype.forEach.call(document.getElementsByClassName(ci), function(e) {
                     // Check to see the direction of the current elements
                     // For horizontal movement:
-                    print(currDirection);
+                    console.log(currDirection);
                     if (currDirection == 'x') {
                         // Extract the current position and the float value of this
                         var old_position = e.style.left;
