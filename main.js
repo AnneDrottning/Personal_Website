@@ -117,16 +117,16 @@ class Element extends React.Component {
                           new_position = old_value + speed;
                         }
 
-                        if (old_value >= 97) {
+                        if (old_value >= 98) {
                             // If the element has moved past the screen we set it to start from the other side again
                             if (old_opacity != 0) {
-                              new_opacity = old_opacity - 0.01;
-                              e.style.opacity = new_opacity+"";
+                              new_opacity = old_opacity - 0.1;
+                              e.style.opacity = new_opacity + "";
                             }
-                        } else if (old_value <= 3) {
+                        } else if (old_value <= 2) {
                           // Want to increase the opacity again:
-                          new_opacity = old_opacity + 0.01;
-                          e.style.opacity = new_opacity+"";
+                          new_opacity = old_opacity + 0.1;
+                          e.style.opacity = new_opacity + "";
                         }
                         e.style.left = new_position + "vw";
                     } /*else { // For vertical movement
