@@ -8,9 +8,9 @@ var currDirection = 'x'; // The clouds move in the x-direction
 // Create the class to create the front page
 class FrontPage extends React.Component {
     // The constructor
-    //constructor(props) {
-    //    super(props);
-    //}
+    constructor(props) {
+        super(props);
+    }
 
     // Function to actually render the page:
     render() {
