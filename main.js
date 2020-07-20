@@ -26,15 +26,16 @@ class FrontPage extends React.Component {
                 <div>
                     <div>
                         {[...Array(Math.round(Math.random()*7) + 4)].map((x, i) =>
-                            <Element type="cloud" key={"cloud" + i}
+                            <Element type={"cloud"} key={"cloud" + i}
                                 direction={"x"} />)}
                     </div>
+                    {/*
                     <div>
                         {[...Array(Math.round(Math.random()*100) + 50)].map((x, i) =>
                             <Element type={"rain"} key={"rain" + i} direction={"y"}
                                  />)}
                     </div>
-
+                    */}
                 </div>
             </div>
         );
@@ -57,7 +58,7 @@ class Element extends React.Component {
                 c.style.top  = Math.round(Math.random()*70 + 10) + "vh";
                 c.style.left = Math.round(Math.random()*100) + "vw";
             })
-        } else if (this.props.type == "rain") {
+        } /*else if (this.props.type == "rain") {
             // Set the positions to above the screen with many different left positions
             Array.prototype.forEach.call(document.getElementsByClassName("drop1"), function(d) {
                 d.style.top  = ((-1)*Math.round(Math.random()*40 + 10)) + "vh";
@@ -67,7 +68,7 @@ class Element extends React.Component {
                 d.style.top  = ((-1)*Math.round(Math.random()*50 + 10)) + "vh";
                 d.style.left = Math.round(Math.random()*100) + "vw";
             })
-        }
+        }*/
 
         // Make the elements move the way we want them to:
         // The movement function:
@@ -76,9 +77,9 @@ class Element extends React.Component {
             var classIdentifiers = [];
             if (currWeather == "cloud") {
                 classIdentifiers = ["cloud1", "cloud2"];
-            } else if (currWeather == "rain") {
+            } /*else if (currWeather == "rain") {
                 classIdentifiers = ["drop1", "drop2"];
-            }
+            }*/
             // Loop over each of the class names to update their positions = to make them move
             Array.prototype.forEach.call(classIdentifiers, function(ci) {
                 var speed = 0;
@@ -86,11 +87,11 @@ class Element extends React.Component {
                     speed = 0.0004;
                 } else if (ci == "cloud2") {
                     speed = 0.0001;
-                } else if (ci == "drop1") {
+                } /*else if (ci == "drop1") {
                     speed = 6;
                 } else if (ci == "drop2") {
                     speed = 10;
-                }
+                }*/
                 // Loop over each class name and set the speeds for all the elements in the class
                 Array.prototype.forEach.call(document.getElementsByClassName(ci), function(e) {
                     // Check to see the direction of the current elements
@@ -103,15 +104,14 @@ class Element extends React.Component {
                         var new_position = 0;
                         if (old_value > 150) {
                             // If the element has moved past the screen we set it to start from the other side again
-                            new_position = old_value;//-10;
-                            e.style.color = 'black';
+                            new_position = -10;
                             // We also want to get a new vertical position for them:
                             e.style.top  = Math.round(Math.random()*90) + "vh";
                         } else {
                             new_position = old_value + speed;
                         }
                         e.style.left = new_position + "vw";
-                    } else { // For vertical movement
+                    } /*else { // For vertical movement
                         // Extract the current position and the float value of this:
                         var old_position = e.style.top;
                         var new_position = parseFloat(old_position.substring(0, old_position.length-2));
@@ -126,7 +126,7 @@ class Element extends React.Component {
                             new_position = old_value + speed;
                         }
                         e.style.top = new_position + "vh";
-                    }
+                    }*/
                 })
             })
 
@@ -144,7 +144,7 @@ class Element extends React.Component {
             return (
                 <p className={"fas fa-cloud " + cloudclass}></p>
             );
-        } else if (this.props.type == "rain") {
+        } /*else if (this.props.type == "rain") {
             // Want to use different variations of the rain:
             // The current type of rain:
             var rainclass = "drop" + (Math.round(Math.random()*1) + 1);
@@ -157,7 +157,7 @@ class Element extends React.Component {
                     <p className={rainclass}>I</p>
                 )
             }
-        }
+        }*/
 
     }
 }
@@ -211,7 +211,7 @@ class WeatherButton extends React.Component {
         }
         function activate(newWeather) {
             currWeather = event.target.id;
-            if (currWeather == "rain") {
+            /*if (currWeather == "rain") {
                 // The classes we want to make visible:
                 var visClasses = ["drop1", "drop2"];
                 // Change the background color:
@@ -243,7 +243,7 @@ class WeatherButton extends React.Component {
                 }
                 var fadeIntoView = setInterval(increaseOpacity, 200);
 
-            }
+            }*/
 
         }
         if (currWeather != event.target.id) {
