@@ -102,6 +102,9 @@ class Element extends React.Component {
                         var old_value    = parseFloat(old_position.substring(0,old_position.length-2));
                         // Update the new position according to the speed
                         var new_position = 0;
+                        if (old_value == 100) {
+                          new_position = old_value + 10;
+                        }
                         if (old_value > 150) {
                             // If the element has moved past the screen we set it to start from the other side again
                             new_position = -10;
