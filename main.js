@@ -100,18 +100,29 @@ class Element extends React.Component {
                         // Extract the current position and the float value of this
                         var old_position = e.style.left;
                         var old_value    = parseFloat(old_position.substring(0,old_position.length-2));
-                        // Update the new position according to the speed
                         var new_position = 0;
-                        if (old_value == 100) {
-                          new_position = old_value + 10;
-                        }
-                        if (old_value > 150) {
-                            // If the element has moved past the screen we set it to start from the other side again
-                            new_position = -10;
-                            // We also want to get a new vertical position for them:
-                            e.style.top  = Math.round(Math.random()*90) + "vh";
+                        /*
+                        * Position won't update after 100vw, so we just reduce
+                        * the opacity to make them invisible and then restart
+                        * at the beginning?
+                        */
+                        if (old_value == 100 && e.style.opacity == 0) {
+                          // We also want to get a new vertical position for them:
+                          e.style.top  = Math.round(Math.random()*90) + "vh";
+                          // Start at the beginning again.
+                          new_position = 0;
                         } else {
-                            new_position = old_value + speed;
+                          new_position = old_value + speed;
+                        }
+
+                        if (old_value >= 97) {
+                            // If the element has moved past the screen we set it to start from the other side again
+                            if (e.style.opacity != 0) {
+                                e.style.opacity = e.style.opacity - 0.01;
+                            }
+                        } else if (old_value <= 3) {
+                          // Want to increase the opacity again:
+                          e.style.opacity = e.style.opacity + 0.01;
                         }
                         e.style.left = new_position + "vw";
                     } /*else { // For vertical movement
