@@ -51,11 +51,11 @@ class Element extends React.Component {
         if (this.props.type == "cloud") {
             Array.prototype.forEach.call(document.getElementsByClassName("cloud1"), function(c) {
                 c.style.top  = Math.round(Math.random()*80 + 10) + "vh";
-                c.style.left = Math.round(Math.random()*50 + 50) + "vw";
+                c.style.left = Math.round(Math.random()*50) + "vw";
             })
             Array.prototype.forEach.call(document.getElementsByClassName("cloud2"), function(c) {
                 c.style.top  = Math.round(Math.random()*70 + 10) + "vh";
-                c.style.left = Math.round(Math.random()*75 + 50) + "vw";
+                c.style.left = Math.round(Math.random()*75) + "vw";
             })
         } else if (this.props.type == "rain") {
             // Set the positions to above the screen with many different left positions
