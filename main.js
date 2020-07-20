@@ -101,6 +101,8 @@ class Element extends React.Component {
                         var old_position = e.style.left;
                         var old_value    = parseFloat(old_position.substring(0,old_position.length-2));
                         var new_position = 0;
+                        var old_opacity = parseFloat(e.style.opacity);
+                        var new_opacity = 0;
                         /*
                         * Position won't update after 100vw, so we just reduce
                         * the opacity to make them invisible and then restart
@@ -117,12 +119,14 @@ class Element extends React.Component {
 
                         if (old_value >= 97) {
                             // If the element has moved past the screen we set it to start from the other side again
-                            if (e.style.opacity != 0) {
-                                e.style.opacity = e.style.opacity - 0.01;
+                            if (old_opacity != 0) {
+                              new_opacity = old_opacity - 0.01;
+                              e.style.opacity = new_opacity+"";
                             }
                         } else if (old_value <= 3) {
                           // Want to increase the opacity again:
-                          e.style.opacity = e.style.opacity + 0.01;
+                          new_opacity = old_opacity + 0.01;
+                          e.style.opacity = new_opacity+"";
                         }
                         e.style.left = new_position + "vw";
                     } /*else { // For vertical movement
